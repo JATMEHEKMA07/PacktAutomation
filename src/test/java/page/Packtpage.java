@@ -100,5 +100,131 @@ public class Packtpage extends Base {
 
 		PositionOfElement(Title, 604, 477);
 
-	}}
+	}
+	public void user_click_on_browse_library_he_should_land_on_browse_lib_homepage() {
+
+		WebElement sign = driver.findElement(By.xpath("//a[@class='style-1 nav-link']"));
+		ExecutorClick(sign);
+		WebElement email = driver.findElement(By.xpath("//input[@id='inline-form-input-username']"));
+		email.sendKeys("sudhirmalik8051@gmail.com");
+		WebElement pass = driver.findElement(By.xpath("//input[@id='inline-form-input-password']"));
+		pass.sendKeys("Lgr.pB@5$V6eVhz"); 
+		WebElement signin = driver
+				.findElement(By.xpath("//button[@class='login-page__main__container__login__form__button__login']"));
+		ExecutorClick(signin);
+		WebElement browser = driver.findElement(By.xpath("(//a[@class='nav-link'])[1]"));
+		ExecutorClick(browser);
+		assertTrue(driver.findElement(By.xpath("//div[@class='filter-results']")).isDisplayed());
+	}
+
+	public void user_click_on_advanced_search_he_should_land_on_advanced_search_page() {
+		WebElement Advance = driver
+				.findElement(By.xpath("//button[@class='button--more-info btn btn-primary advanced-search-button']"));
+		ExecutorClick(Advance);
+		assertTrue(
+				driver.findElement(By.xpath("//div[@class='advanced-search__search-form__header']/h2")).isDisplayed());
+
+	}
+
+	public void user_click_on_my_lib_and_then_on_all_option_provided_below_he_should_be_redirected_to_respective_pages() {
+
+		driver.navigate().refresh();
+		driver.findElement(By.xpath("//li[@id='library-dropdown']")).click();
+
+		List<WebElement> list = driver.findElements(By.xpath("//a[@class='dropdown-item']"));
+
+		for (int i = 0; i < 6; i++) {
+
+			if (i == 0) {
+				driver.findElement(By.xpath("(//a[@class='dropdown-item'])[1]")).click();
+
+				WebElement Element1 = driver.findElement(By.xpath("//a[@class='button']"));
+				String Text1 = Element1.getText();
+				System.out.println(Text1);
+
+				if (Element1.isDisplayed()) {
+					assertTrue(true);
+					driver.findElement(By.xpath("//a[@id='library-dropdown']")).click();
+				} else {
+					assertTrue(false);
+				}
+
+			}
+			if (i == 1) {
+				WebElement home = driver.findElement(By.xpath("(//a[@class='dropdown-item'])[2]"));
+				home.click();
+				WebElement Element2 = driver.findElement(By.xpath("//h2[@class='title']"));
+				String Text2 = Element2.getText();
+				System.out.println(Text2);
+
+				if (Element2.isDisplayed()) {
+					assertTrue(true);
+					driver.findElement(By.xpath("//a[@id='library-dropdown']")).click();
+				} else {
+					assertTrue(false);
+				}
+
+			}
+			if (i == 2) {
+				driver.findElement(By.xpath("(//a[@class='dropdown-item'])[3]")).click();
+
+				WebElement Element3 = driver.findElement(By.xpath("//h2[@class='title']"));
+				String Text3 = Element3.getText();
+				System.out.println(Text3);
+
+				if (Element3.isDisplayed()) {
+					assertTrue(true);
+					driver.findElement(By.xpath("//a[@id='library-dropdown']")).click();
+				} else {
+					assertTrue(false);
+				}
+			}
+			if (i == 3) {
+				driver.findElement(By.xpath("(//a[@class='dropdown-item'])[4]")).click();
+
+				WebElement Element4 = driver.findElement(By.xpath("//div[@ class='note-header']/h2"));
+				String Text4 = Element4.getText();
+				System.out.println(Text4);
+
+				if (Element4.isDisplayed()) {
+					assertTrue(true);
+					driver.findElement(By.xpath("//a[@id='library-dropdown__BV_toggle_']")).click();
+				} else {
+					assertTrue(false);
+				}
+			}
+			if (i == 4) {
+				driver.findElement(By.xpath("(//a[@class='dropdown-item'])[5]")).click();
+
+				WebElement Element5 = driver
+						.findElement(By.xpath("//div[@class='row pl-5 header-container mt-5 mb-0']/h2"));
+				String Text5 = Element5.getText();
+				System.out.println(Text5);
+
+				if (Element5.isDisplayed()) {
+					assertTrue(true);
+					driver.findElement(By.xpath("(//a[@aria-haspopup='true'])[1]")).click();
+				} else {
+					assertTrue(false);
+				}
+			}
+			if (i == 5) {
+				driver.findElement(By.xpath("(//a[@class='dropdown-item'])[6]")).click();
+
+				WebElement Element6 = driver
+						.findElement(By.xpath("//section[@class='full-width-container header-block']/h1"));
+				String Text6 = Element6.getText();
+				System.out.println(Text6);
+
+				if (Element6.isDisplayed()) {
+					assertTrue(true);
+				} else {
+					assertTrue(false);
+				}
+			}
+		}
+	}
+
+	
+}
 

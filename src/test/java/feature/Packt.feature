@@ -12,3 +12,13 @@ Scenario:
 	And  verify colour,text and position of Read now 
 	And  verify colour,text and position of Advance your knowledge in tech 
 	Then verify colour,text and position of Your suggested titles 
+	
+	
+@pack 
+Scenario: 
+	To check that the top nav bar, and their sub options go to the correct pages. 
+
+	When user click on Browse library he should land on Browse lib homepage 
+	And  user click on Advanced search he should land on Advanced search page 
+	Then user click on my lib and then on all option provided below he should be redirected to respective pages  
+	
