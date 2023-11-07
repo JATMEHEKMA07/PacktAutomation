@@ -63,6 +63,22 @@ public class Packstep extends Base {
 	@Then("user click on my lib and then on all option provided below he should be redirected to respective pages")
 	public void user_click_on_my_lib_and_then_on_all_option_provided_below_he_should_be_redirected_to_respective_pages() {
 		Packt.user_click_on_my_lib_and_then_on_all_option_provided_below_he_should_be_redirected_to_respective_pages();
-	}}
+	}
+	@When("user click on carousel titles i.e Layered Design for Ruby on Rails Applications")
+	public void user_click_on_carousel_titles_i_e_layered_design_for_ruby_on_rails_applications() {
+		Packt.user_click_on_carousel_titles_i_e_layered_design_for_ruby_on_rails_applications();
+		assertTrue(driver.findElement(By.xpath("//h2[@class='text-white']")).isDisplayed());
+	}
+
+	@And("click on Machine Learning Engineering with Python")
+	public void click_on_machine_learning_engineering_with_python() {
+		Packt.click_on_machine_learning_engineering_with_python();
+	}
+	@Then("click on Modern generative AI these titles should appear correctly as the main title")
+	public void click_on_Modern_generative_AI_these_titles_should_appear_correctly_as_the_main_title() {
+		Packt.click_on_Modern_generative_AI_these_titles_should_appear_correctly_as_the_main_title();
+	}
+
+}
 
 	

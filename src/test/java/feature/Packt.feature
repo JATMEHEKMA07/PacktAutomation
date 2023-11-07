@@ -20,5 +20,15 @@ Scenario:
 
 	When user click on Browse library he should land on Browse lib homepage 
 	And  user click on Advanced search he should land on Advanced search page 
-	Then user click on my lib and then on all option provided below he should be redirected to respective pages  
+	Then user click on my lib and then on all option provided below he should be redirected to respective pages 
+	
+@pack 
+Scenario: 
+	In the “your suggested titles” section, check the titles in the carousel below the main title, and ensure that they appear correctly as the main title.   
+
+
+	When  user click on carousel titles i.e Layered Design for Ruby on Rails Applications 
+	And   click on Machine Learning Engineering with Python 
+	Then  click on Modern generative AI these titles should appear correctly as the main title 
+	
 	

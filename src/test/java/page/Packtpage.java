@@ -224,6 +224,36 @@ public class Packtpage extends Base {
 			}
 		}
 	}
+	public void user_click_on_carousel_titles_i_e_layered_design_for_ruby_on_rails_applications() {
+		List<WebElement> lis = driver.findElements(By.xpath("//div[@class='slick-track']"));
+		for (WebElement ele : lis) {
+			String l = ele.getText();
+			System.out.println(l);
+
+		}
+		WebElement ruby = driver
+				.findElement(By.xpath("(//h5[@class='justify-content-end text-white mt-4 title-name'])[2]"));
+		ExecutorClick(ruby);
+		assertTrue(driver.findElement(By
+				.xpath("/html/body/div[1]/div/main/section[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]/div[1]/span/span"))
+				.isDisplayed());
+	}
+
+	public void click_on_machine_learning_engineering_with_python() {
+		WebElement machine = driver
+				.findElement(By.xpath("(//h5[@class='justify-content-end text-white mt-4 title-name'])[3]"));
+		ExecutorClick(machine);
+		assertTrue(driver.findElement(By
+				.xpath("/html/body/div[1]/div/main/section[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]/div[1]/span/span"))
+				.isDisplayed());
+	}
+
+	public void click_on_Modern_generative_AI_these_titles_should_appear_correctly_as_the_main_title() {
+		WebElement AI = driver
+				.findElement(By.xpath("(//h5[@class='justify-content-end text-white mt-4 title-name'])[3]"));
+		ExecutorClick(AI);
+		assertTrue(driver.findElement(By.xpath("//h2[@class='text-white']")).isDisplayed());
+	}
 
 	
 }
