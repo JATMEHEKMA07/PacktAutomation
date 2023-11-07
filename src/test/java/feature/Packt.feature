@@ -31,4 +31,11 @@ Scenario:
 	And   click on Machine Learning Engineering with Python 
 	Then  click on Modern generative AI these titles should appear correctly as the main title 
 	
+	@pack 
+Scenario: 
+	To verify that when user click on browse in the top nav, on the browse page click to clear any filters that are already set, and then click to set the 2021 filter for publication date and search books   
+	When user click on  the top nav 
+	And  on browser page clear all filter and apply 2021 filter for publication date 
+	And  type the Python,Paint,Secure,Tableau words into the search bar 
+	Then check that all titles found include that search text 
 	

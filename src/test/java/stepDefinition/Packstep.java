@@ -78,6 +78,28 @@ public class Packstep extends Base {
 	public void click_on_Modern_generative_AI_these_titles_should_appear_correctly_as_the_main_title() {
 		Packt.click_on_Modern_generative_AI_these_titles_should_appear_correctly_as_the_main_title();
 	}
+	@When("user click on  the top nav")
+	public void user_click_on_the_top_nav() {
+		Packt.user_click_on_the_top_nav();
+	}
+
+	@And("on browser page clear all filter and apply {int} filter for publication date")
+	public void on_browser_page_clear_all_filter_and_apply_filter_for_publication_date(Integer int1)  {
+		Packt.on_browser_page_clear_all_filter_and_apply_filter_for_publication_date(int1);
+	}
+
+	@And("type the Python,Paint,Secure,Tableau words into the search bar")
+	public void type_the_python_paint_secure_tableau_words_into_the_search_bar() {
+		Packt.type_the_python_paint_secure_tableau_words_into_the_search_bar();
+
+	}
+
+	@Then("check that all titles found include that search text")
+	public void check_that_all_titles_found_include_that_search_text() {
+		Packt.check_that_all_titles_found_include_that_search_text(); 
+
+	}
+
 
 }
 

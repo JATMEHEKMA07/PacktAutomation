@@ -254,7 +254,107 @@ public class Packtpage extends Base {
 		ExecutorClick(AI);
 		assertTrue(driver.findElement(By.xpath("//h2[@class='text-white']")).isDisplayed());
 	}
+	public void user_click_on_the_top_nav() {
+
+		WebElement browser = driver.findElement(By.xpath("//a[@class='nav-link']"));
+		ExecutorClick(browser);
+	}
+
+	public void on_browser_page_clear_all_filter_and_apply_filter_for_publication_date(Integer int1) {
+		WebElement reset = driver.findElement(By.xpath("//button[@class='reset-button']"));
+		ExecutorClick(reset);
+		explicitweight(reset);
+
+		WebElement publication = driver.findElement(By.xpath("(//div[@class='header'])[3]/img"));
+		ExecutorClick(publication);
+		explicitweight(publication);
+
+		WebElement year = driver.findElement(By.xpath("(//div[@class='count'])[11]"));
+		ExecutorClick(year);
+		explicitweight(year);
+	}
+
+	public void type_the_python_paint_secure_tableau_words_into_the_search_bar() {
+		driver.navigate().refresh();
+		WebElement search = driver.findElement(By.xpath("(//input[@placeholder='Search titles …'])[2]"));
+		search.sendKeys("Python");
+
+		List<WebElement> phy = driver.findElements(By.xpath("//a[@class='suggest-item']"));
+
+		for (WebElement elk : phy) {
+
+			String text = elk.getText();
+			System.out.println(text);
+			explicitweight(elk);
+			if (text.contains("python")) {
+				assertTrue(true);
+			} else {
+				assertTrue(false);
+			}
+		}
+		WebElement cross = driver.findElement(By.xpath("//div[@id='search-input']/button"));
+		cross.click();
+
+	}
+
+	public void check_that_all_titles_found_include_that_search_text() {
+		driver.navigate().refresh();
+		WebElement search = driver.findElement(By.xpath("(//input[@placeholder='Search titles …'])[2]"));
+		search.sendKeys("Paint");
+		WebElement pop = driver.findElement(By.xpath("(//div[@class='popup'])[1]"));
+		String text1 = pop.getText();
+		if (text1.contains("Paint")) {
+			assertTrue(false);
+		} else {
+			assertTrue(true);
+		}
+
+		WebElement cross1 = driver.findElement(By.xpath("//div[@id='search-input']/button"));
+		cross1.click();
+
+		WebElement sc = driver.findElement(By.xpath("(//input[@placeholder='Search titles …'])[2]"));
+		sc.sendKeys("Secure");
+		explicitweight(sc);
+		List<WebElement> sec = driver.findElements(By.xpath("//div[@class='d-flex flex-column']"));
+
+		for (WebElement ela : sec) {
+
+			String text = ela.getText();
+			System.out.println(text);
+			if (text.contains("secure")) {
+				assertTrue(false);
+			} else {
+				assertTrue(true);
+			}
+		}
+
+		WebElement cross = driver.findElement(By.xpath("//div[@id='search-input']/button"));
+		cross.click();
+		driver.navigate().refresh();
+		WebElement search2 = driver.findElement(By.xpath("(//input[@placeholder='Search titles …'])[2]"));
+
+		search2.sendKeys("Tableau");
+		WebElement text2 = driver.findElement(By.xpath("(//div[@class='d-flex flex-column']/a)[2]"));
+
+		explicitweight(text2);
+		List<WebElement> tab = driver.findElements(By.xpath("//div[@class='d-flex flex-column']/a"));
+
+		for (WebElement la : tab) {
+
+			String text5 = la.getText();
+			System.out.println(text5);
+
+			if (text5.contains("tableau")) {
+				assertTrue(true);
+			} else {
+				assertTrue(false);
+			}
+		}
+
+	}
+
+}
 
 	
-}
+
 
